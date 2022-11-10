@@ -1,0 +1,8 @@
+---
+- hosts: pruebas-gitclone
+  gather_facts: no
+
+  tasks:
+
+  - name: clonar el repo
+    raw: "git clone https://github.com/lmmar-lm/pruebas-gitclone.git"
