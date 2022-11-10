@@ -1,0 +1,16 @@
+name: A simple clone action
+
+on:
+  push:
+    branches: 
+      - 'main'
+jobs:
+  Clone-action:
+    runs-on: [self-hosted, lt]
+    name: Running a clone repository in destiny
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: call the ansible playbook
+      working-directory: ./ansible
+      run: ansible-playbook clone_repo.yml
